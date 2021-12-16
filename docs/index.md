@@ -21,7 +21,7 @@ Full Documentation can be found [here](https://fyndiq.github.io/rules-engine/)
 ```python
 from rules_engine import Rule, RulesEngine, when, then
 
-name = fyndiq
+name = "fyndiq"
 
 RulesEngine(Rule(when(name == "fyndiq"),then(True))).run(name)
 
