@@ -12,3 +12,5 @@ mypy
 pip-tools
 twine
 build
+mkdocs
+mkdocs-material

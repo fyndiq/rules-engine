@@ -1,4 +1,4 @@
-# Rules Engine
+# Getting Started
 
 [![CircleCI](https://circleci.com/gh/fyndiq/rules-engine.svg?style=shield)](https://circleci.com/gh/fyndiq/rules-engine) [![codecov](https://codecov.io/gh/fyndiq/rules-engine/branch/master/graph/badge.svg)](https://codecov.io/gh/fyndiq/rules-engine) [![Downloads](https://pepy.tech/badge/rules-engine)](https://pepy.tech/project/rules-engine) ![GitHub](https://img.shields.io/github/license/fyndiq/rules-engine)
 
