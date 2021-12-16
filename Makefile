@@ -9,3 +9,9 @@ build:
 
 publish:
 	@./scripts/publish.sh
+
+deploy-docs:
+	@./scripts/deploy-docs.sh
+
+serve-docs:
+	@./scripts/serve-docs.sh
