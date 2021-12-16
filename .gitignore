@@ -1,1 +1,17 @@
+*.egg-info
+*.lprof
+.cache
+.coverage
+.eggs
+.idea
+.mypy_cache
+.pyc
+.pytest_cache
+.venv
+__pycache__
+coverage.xml
+.vscode
+.vim
+build
+dist
 .undodir

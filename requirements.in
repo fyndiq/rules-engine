@@ -1,0 +1,14 @@
+pytest
+pytest-coverage
+pytest-mock
+pytest-sugar
+sanic
+sanic-testing
+flake8
+flake8-black
+flake8-isort
+pdbpp
+mypy
+pip-tools
+twine
+build
