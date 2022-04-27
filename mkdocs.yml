@@ -2,10 +2,13 @@ site_name: Rules Engine
 nav:
   - Getting Started: index.md
   - Install: install.md
+  - Basic Example: basic_example.md
 
 theme:
   name: "material"
   palette:
     primary: "teal"
 markdown_extensions:
-  - codehilite
+  - pymdownx.highlight:
+      use_pygments: true
+  - pymdownx.superfences
