@@ -20,6 +20,8 @@ certifi==2021.10.8
     # via
     #   httpx
     #   requests
+cffi==1.15.0
+    # via cryptography
 charset-normalizer==2.0.9
     # via requests
 click==8.0.3
@@ -31,6 +33,8 @@ colorama==0.4.4
     # via twine
 coverage[toml]==6.2
     # via pytest-cov
+cryptography==37.0.0
+    # via secretstorage
 docutils==0.18.1
     # via readme-renderer
 fancycompleter==0.9.1
@@ -62,13 +66,16 @@ idna==3.3
 importlib-metadata==4.8.3
     # via
     #   keyring
-    #   markdown
     #   mkdocs
     #   twine
 iniconfig==1.1.1
     # via pytest
 isort==5.10.1
     # via flake8-isort
+jeepney==0.8.0
+    # via
+    #   keyring
+    #   secretstorage
 jinja2==3.0.3
     # via
     #   mkdocs
@@ -129,6 +136,8 @@ py==1.11.0
     # via pytest
 pycodestyle==2.8.0
     # via flake8
+pycparser==2.21
+    # via cffi
 pyflakes==2.4.0
     # via flake8
 pygments==2.10.0
@@ -184,6 +193,8 @@ sanic-routing==0.7.2
     # via sanic
 sanic-testing==0.7.0
     # via -r requirements.in
+secretstorage==3.3.2
+    # via keyring
 six==1.16.0
     # via
     #   bleach
@@ -216,7 +227,7 @@ typing-extensions==4.0.1
     # via
     #   black
     #   mypy
-ujson==5.0.0
+ujson==5.1.0
     # via sanic
 urllib3==1.26.7
     # via requests
