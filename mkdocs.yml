@@ -2,8 +2,8 @@ site_name: Rules Engine
 nav:
   - Getting Started: index.md
   - Install: install.md
+  - When/Then: when_then.md
   - Operators:
-    - when/then: when_then.md
     - not_: not.md
     - all_: all.md
     - any_: any.md
