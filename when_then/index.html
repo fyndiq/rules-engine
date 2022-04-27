@@ -8,19 +8,19 @@
       
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.11">
     
     
       
-        <title>Rules Engine</title>
+        <title>When/Then - Rules Engine</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.8c5ef100.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
         
           
           
@@ -39,7 +39,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -62,6 +62,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#whenthen" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -72,7 +77,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Rules Engine" class="md-header__button md-logo" aria-label="Rules Engine" data-md-component="logo">
+    <a href=".." title="Rules Engine" class="md-header__button md-logo" aria-label="Rules Engine" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -91,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              When/Then
             
           </span>
         </div>
@@ -158,7 +163,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Rules Engine" class="md-nav__button md-logo" aria-label="Rules Engine" data-md-component="logo">
+    <a href=".." title="Rules Engine" class="md-nav__button md-logo" aria-label="Rules Engine" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -177,7 +182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         Getting Started
       </a>
     </li>
@@ -192,7 +197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/install/" class="md-nav__link">
+      <a href="../install/" class="md-nav__link">
         Install
       </a>
     </li>
@@ -205,11 +210,59 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/when_then/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          When/Then
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         When/Then
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when" class="md-nav__link">
+    When
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#then" class="md-nav__link">
+    Then
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -248,7 +301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/not/" class="md-nav__link">
+      <a href="../not/" class="md-nav__link">
         not_
       </a>
     </li>
@@ -262,7 +315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/all/" class="md-nav__link">
+      <a href="../all/" class="md-nav__link">
         all_
       </a>
     </li>
@@ -276,7 +329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/any/" class="md-nav__link">
+      <a href="../any/" class="md-nav__link">
         any_
       </a>
     </li>
@@ -298,7 +351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/basic_example/" class="md-nav__link">
+      <a href="../basic_example/" class="md-nav__link">
         Basic Example
       </a>
     </li>
@@ -322,6 +375,30 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when" class="md-nav__link">
+    When
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#then" class="md-nav__link">
+    Then
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -332,8 +409,35 @@
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
+                
 
+
+<h1 id="whenthen">When\Then</h1>
+<h2 id="when">When</h2>
+<p>Evaluates a condition.</p>
+<p>lets check if a value is None and raise an exception</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rules_engine</span> <span class="kn">import</span> <span class="n">Rule</span><span class="p">,</span> <span class="n">RulesEngine</span><span class="p">,</span> <span class="n">when</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">def</span> <span class="nf">raise_cannot_be_none_error</span><span class="p">():</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;not a string error&quot;</span><span class="p">)</span>
+
+<span class="n">RulesEngine</span><span class="p">(</span><span class="n">Rule</span><span class="p">(</span><span class="n">when</span><span class="p">(</span><span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">),</span> <span class="n">raise_cannot_be_none_error</span><span class="p">))</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="ne">ValueError</span><span class="p">:</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">string</span> <span class="n">error</span>
+</code></pre></div>
+<h2 id="then">Then</h2>
+<p>Evaluates an action</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rules_engine</span> <span class="kn">import</span> <span class="n">Rule</span><span class="p">,</span> <span class="n">RulesEngine</span><span class="p">,</span> <span class="n">when</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<span class="n">RulesEngine</span><span class="p">(</span><span class="n">Rule</span><span class="p">(</span><span class="n">when</span><span class="p">(</span><span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">),</span> <span class="n">then</span><span class="p">(</span><span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;not a string error&#39;</span><span class="p">))))</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="ne">ValueError</span><span class="p">:</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">string</span> <span class="n">error</span>
+</code></pre></div>
+
+              
             </article>
           </div>
         </div>
@@ -341,6 +445,41 @@
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../install/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Install" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Install
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../not/" class="md-footer__link md-footer__link--next" aria-label="Next: not_" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              not_
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -362,10 +501,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "/", "features": [], "search": "/assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.748e2769.min.js"></script>
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
       
     
   </body>
