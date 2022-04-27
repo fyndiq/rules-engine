@@ -2,9 +2,8 @@
 
 Evaluates multiple conditions and if any of conditions is `True` the action is excuted
 
-Example
-
-We need to check if an object `obj` is a `str` or `list`
+- Example:
+    - We need to check if an object `obj` is a `str` or `list`
 
 
 ```python

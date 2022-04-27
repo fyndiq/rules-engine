@@ -2,9 +2,9 @@
 
 In order for an article to be completed it must have the following rules
 
-1. ArticleStockUpdated where stock is > 0
-2. ArticleImageUploaded where the image url is present
-3. ArticlePriceUpdated where the price exists
+1. stock is > 0.
+2. image url is present.
+3. price exists.
 
 ```python
 from collections import namedtuple
@@ -30,11 +30,9 @@ def article_controller(article: Article) -> Union[bool, None]:
     return produce_article_completed_event()
 ```
 
-To be able to change to rules engine
-We need to split the conditions and actions
+To be able to change to rules engine, we need to split the conditions and actions.
 
-Rules engine is pretty simple if the condition is True
-The rules engine will run the action
+Rules engine is pretty simple if the condition is True, its corresponding action will be executed.
 
 ```python
 ### Conditions

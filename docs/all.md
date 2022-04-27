@@ -2,9 +2,8 @@
 
 Evaluates multiple conditions and if all conditions are `True` the action is excuted
 
-Example
-
-We need to check if an object `obj` is not missing and of type `list`
+- Example:
+    - We need to check if an object `obj` is not missing and of type `list`
 
 
 ```python

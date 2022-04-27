@@ -13,6 +13,7 @@ theme:
   name: "material"
   palette:
     primary: "teal"
+  logo: assets/logo.png
 markdown_extensions:
   - pymdownx.highlight:
       use_pygments: true
