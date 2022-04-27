@@ -79,8 +79,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Rules Engine" class="md-header__button md-logo" aria-label="Rules Engine" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -165,8 +164,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Rules Engine" class="md-nav__button md-logo" aria-label="Rules Engine" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="../assets/logo.png" alt="logo">
 
     </a>
     Rules Engine
@@ -415,7 +413,7 @@
 <h1 id="whenthen">When\Then</h1>
 <h2 id="when">When</h2>
 <p>Evaluates a condition.</p>
-<p>lets check if a value is None and raise an exception</p>
+<p>let's check if a value is <code>None</code> and raise an exception.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rules_engine</span> <span class="kn">import</span> <span class="n">Rule</span><span class="p">,</span> <span class="n">RulesEngine</span><span class="p">,</span> <span class="n">when</span>
 <span class="n">obj</span> <span class="o">=</span> <span class="kc">None</span>
 
@@ -427,10 +425,9 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="ne">ValueError</span><span class="p">:</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">string</span> <span class="n">error</span>
 </code></pre></div>
 <h2 id="then">Then</h2>
-<p>Evaluates an action</p>
+<p>Evaluates an action.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rules_engine</span> <span class="kn">import</span> <span class="n">Rule</span><span class="p">,</span> <span class="n">RulesEngine</span><span class="p">,</span> <span class="n">when</span>
 <span class="n">obj</span> <span class="o">=</span> <span class="kc">None</span>
-
 
 <span class="n">RulesEngine</span><span class="p">(</span><span class="n">Rule</span><span class="p">(</span><span class="n">when</span><span class="p">(</span><span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">),</span> <span class="n">then</span><span class="p">(</span><span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;not a string error&#39;</span><span class="p">))))</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 
