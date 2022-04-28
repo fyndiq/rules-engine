@@ -2,10 +2,19 @@ site_name: Rules Engine
 nav:
   - Getting Started: index.md
   - Install: install.md
+  - When/Then: when_then.md
+  - Operators:
+    - not_: not.md
+    - all_: all.md
+    - any_: any.md
+  - Basic Example: basic_example.md
 
 theme:
   name: "material"
   palette:
     primary: "teal"
+  logo: assets/logo.png
 markdown_extensions:
-  - codehilite
+  - pymdownx.highlight:
+      use_pygments: true
+  - pymdownx.superfences

@@ -4,9 +4,12 @@
 
 ## Description
 
-Simple rules engine
 
-Full Documentation can be found [here](https://fyndiq.github.io/rules-engine/)
+Simple rules engine inspired by [Martin Fowler's blog post in
+2009](https://www.martinfowler.com/bliki/RulesEngine.html) and
+[funnel-rules-engine](https://github.com/funnel-io/funnel-rules-engine).
+
+Full source code on [github](https://github.com/fyndiq/rules-engine).
 
 ## Requirements
 
