@@ -1,9 +1,9 @@
 # Any
 
-Evaluates multiple conditions and if any of conditions is `True` the action is excuted
+Evaluates multiple conditions and if any of the conditions is `True` the action is executed
 
 - Example:
-    - We need to check if an object `obj` is a `str` or `list`
+    - We need to check if an object `obj` is a `str` or a `list`
 
 
 ```python
@@ -16,7 +16,7 @@ def is_a_str(obj):
 def is_a_list(obj):
     return isinstance(obj, list)
 
-obj="Hello"
+obj = "Hello"
 
 RulesEngine(Rule(any_(is_a_str, is_a_list), then(True))).run(obj)
 
