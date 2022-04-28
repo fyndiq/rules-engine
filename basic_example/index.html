@@ -370,7 +370,7 @@
     <span class="k">return</span> <span class="kc">None</span>
 
 
-<span class="k">def</span> <span class="nf">article_controller</span><span class="p">(</span><span class="n">article</span><span class="p">:</span> <span class="n">Article</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="k">def</span> <span class="nf">article_controller</span><span class="p">(</span><span class="n">article</span><span class="p">:</span> <span class="n">Article</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">article</span><span class="o">.</span><span class="n">stock</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">article</span><span class="o">.</span><span class="n">price</span><span class="p">:</span>
@@ -380,7 +380,7 @@
     <span class="k">return</span> <span class="n">produce_article_completed_event</span><span class="p">()</span>
 </code></pre></div>
 <p>To be able to change to rules engine, we need to split the conditions and actions.</p>
-<p>Rules engine is pretty simple if the condition is True, its corresponding action will be executed.</p>
+<p>Rules engine is pretty simple if the condition is <code>True</code>, its corresponding action will be executed.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">### Conditions</span>
 <span class="k">def</span> <span class="nf">no_article_stock</span><span class="p">(</span><span class="n">article</span><span class="p">):</span>
     <span class="k">return</span> <span class="ow">not</span> <span class="n">article</span><span class="o">.</span><span class="n">stock</span>
