@@ -1,17 +1,30 @@
+SHELL := /bin/bash
+
 setup:
-	@./scripts/setup.sh
+	@(\
+		python -m venv .venv && \
+		source .venv/bin/activate &&  \
+		pip3 install -U pip && \
+		pip3 install -r requirements.txt \
+	)
 
 pip-update:
-	@./scripts/pip-update.sh
+	@pip-compile -U requirements.in --output-file requirements.txt
 
 build:
-	@./scripts/build.sh
+	@python -m build
 
 publish:
-	@./scripts/publish.sh
+	@twine upload dist/*
 
 deploy-docs:
-	@./scripts/deploy-docs.sh
+	@mkdocs gh-deploy
 
 serve-docs:
-	@./scripts/serve-docs.sh
+	@mkdocs serve
+
+test:
+	@(\
+		source .venv/bin/activate && \
+		pytest \
+	)
