@@ -20,7 +20,7 @@ def produce_article_completed_event():
     return None
 
 
-def article_controller(article: Article) -> Union[bool, None]:
+def article_controller(article: Article):
     if not article.stock:
         return False
     if not article.price:
@@ -32,7 +32,7 @@ def article_controller(article: Article) -> Union[bool, None]:
 
 To be able to change to rules engine, we need to split the conditions and actions.
 
-Rules engine is pretty simple if the condition is True, its corresponding action will be executed.
+Rules engine is pretty simple if the condition is `True`, its corresponding action will be executed.
 
 ```python
 ### Conditions
