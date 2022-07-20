@@ -32,4 +32,3 @@ RulesEngine(Rule(when(obj is None), then('not a string error'))).run(obj)
 
 >>> 'not a string error'
 ```
-
