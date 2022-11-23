@@ -143,7 +143,7 @@ Runs rules sequentially and exists executes the action for the first passing con
 
 ```python
 
-from rules_engine import Rule, RulesEngine, them
+from rules_engine import Rule, RulesEngine, then
 obj = None
 
 def is_integer(value):
