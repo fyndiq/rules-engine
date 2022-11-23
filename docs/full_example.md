@@ -1,4 +1,4 @@
-# Basic Example
+# Full Example
 
 In order for an article to be completed it must have the following rules
 
