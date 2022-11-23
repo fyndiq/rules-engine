@@ -8,7 +8,7 @@ nav:
     - not_: not.md
     - all_: all.md
     - any_: any.md
-  - Basic Example: basic_example.md
+  - Full Example: full_example.md
 
 theme:
   name: "material"
