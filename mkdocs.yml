@@ -3,6 +3,7 @@ nav:
   - Getting Started: index.md
   - Install: install.md
   - When/Then: when_then.md
+  - Run/RunAll: run_vs_run_all.md
   - Operators:
     - not_: not.md
     - all_: all.md
