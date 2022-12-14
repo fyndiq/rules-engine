@@ -1,9 +1,10 @@
 # Getting Started
 
-[![CircleCI](https://circleci.com/gh/fyndiq/rules-engine.svg?style=shield)](https://circleci.com/gh/fyndiq/rules-engine) [![codecov](https://codecov.io/gh/fyndiq/rules-engine/branch/master/graph/badge.svg)](https://codecov.io/gh/fyndiq/rules-engine) [![Downloads](https://pepy.tech/badge/rules-engine)](https://pepy.tech/project/rules-engine) ![GitHub](https://img.shields.io/github/license/fyndiq/rules-engine)
+
+![workflow](https://github.com/fyndiq/rules-engine/actions/workflows/ci.yaml/badge.svg)
+[![Downloads](https://pepy.tech/badge/rules-engine)](https://pepy.tech/project/rules-engine) ![GitHub](https://img.shields.io/github/license/fyndiq/rules-engine)
 
 ## Description
-
 
 Simple rules engine inspired by [Martin Fowler's blog post in
 2009](https://www.martinfowler.com/bliki/RulesEngine.html) and
