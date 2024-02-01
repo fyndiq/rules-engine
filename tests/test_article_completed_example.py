@@ -7,15 +7,15 @@ from src.rules_engine import Otherwise, Rule, RulesEngine, not_, then
 Article = namedtuple("Article", "title price image_url stock")
 
 
-def article_stock_missing(article):
+def article_stock_missing(article, message):
     return not article.stock
 
 
-def article_price_missing(article):
+def article_price_missing(article, message):
     return not article.price
 
 
-def article_image_missing(article):
+def article_image_missing(article, message):
     return not article.image_url
 
 

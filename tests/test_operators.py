@@ -3,7 +3,7 @@ import pytest
 from src.rules_engine import Rule, RulesEngine, all_, any_, not_, then, when
 
 
-def raise_cannot_be_none_error(obj):
+def raise_cannot_be_none_error(obj, **kwargs):
     raise ValueError("cannot be None error")
 
 
