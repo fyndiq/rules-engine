@@ -4,6 +4,10 @@ from dataclasses import dataclass
 T = TypeVar('T')
 
 
+class NoMatch(Exception):
+    message = "No conditions matched"
+
+
 @dataclass
 class Result:
     value: Any
@@ -36,24 +40,22 @@ class RulesEngine:
     def __init__(self, *rules: Rule) -> None:
         self.rules = rules
 
-    def _get_message(self, rule) -> Optional[str]:
-        if rule.message:
-            return rule.message
-        return rule.condition.__name__ if rule.condition.__name__ != "<lambda>" else None
-
     def run(self, *args: Any, **kwargs: Any) -> Any:
         for rule in self.rules:
             if rule.condition(*args, **kwargs):
-                return Result(value=rule.action(*args, **kwargs), message=self._get_message(rule))
+                return Result(value=rule.action(*args, **kwargs), message=rule.message)
 
-        return Result(value=None, message="No conditions matched")
+        raise NoMatch
 
     def run_all(self, *args: Any, **kwargs: Any) -> list:
-        return [
-            Result(value=rule.action(*args, **kwargs), message=self._get_message(rule))
+        results = [
+            Result(value=rule.action(*args, **kwargs), message=rule.message)
             for rule in self.rules
             if rule.condition(*args, **kwargs)
         ]
+        if not results:
+            raise NoMatch
+        return results
 
 
 def when(state: bool) -> Callable[..., bool]:
