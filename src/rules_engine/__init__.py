@@ -43,16 +43,17 @@ class RulesEngine:
     def run(self, *args: Any, **kwargs: Any) -> Any:
         for rule in self.rules:
             if rule.condition(*args, **kwargs):
-                return Result(value=rule.action(*args, **kwargs), message=rule.message)
+                return Result(rule.action(*args, **kwargs), rule.message)
 
         raise NoMatch
 
     def run_all(self, *args: Any, **kwargs: Any) -> list:
         results = [
-            Result(value=rule.action(*args, **kwargs), message=rule.message)
+            Result(rule.action(*args, **kwargs), rule.message)
             for rule in self.rules
             if rule.condition(*args, **kwargs)
         ]
+
         if not results:
             raise NoMatch
         return results
