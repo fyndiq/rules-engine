@@ -3,7 +3,7 @@ import pytest
 from src.rules_engine import Rule, RulesEngine, all_, any_, not_, then, when
 
 
-def raise_cannot_be_none_error(obj, message):
+def raise_cannot_be_none_error(obj):
     raise ValueError("cannot be None error")
 
 
@@ -13,7 +13,9 @@ def test_when_then_operator():
     with pytest.raises(ValueError):
         RulesEngine(Rule(when(obj is None), raise_cannot_be_none_error)).run(obj)
 
-    assert RulesEngine(Rule(when(obj is not None), then(True))).run(obj) is None
+    result = RulesEngine(Rule(when(obj is not None), then(True), "obj is None")).run(obj)
+    assert result.value is None
+    assert result.message == "No conditions matched"
 
 
 @pytest.mark.parametrize(
@@ -27,7 +29,7 @@ def test_when_then_operator():
 def test_not_operator(condition, action, result):
     obj = None
 
-    assert RulesEngine(Rule(not_(when(condition)), then(action))).run(obj) is result
+    assert RulesEngine(Rule(not_(when(condition)), then(action))).run(obj).value is result
 
 
 @pytest.mark.parametrize(
@@ -42,19 +44,21 @@ def test_not_operator(condition, action, result):
 def test_any_operator(conditions, action, result):
     obj = None
 
-    assert RulesEngine(Rule(any_(*conditions), then(action))).run(obj) is result
+    assert RulesEngine(Rule(any_(*conditions), then(action))).run(obj).value is result
 
 
 @pytest.mark.parametrize(
-    "conditions,action,result",
+    "conditions,action,value,message",
     [
-        ([when(False), when(False), when(False)], "A", None),
-        ([when(True), when(False), when(False)], "A", None),
-        ([when(True), when(True), when(False)], "A", None),
-        ([when(True), when(True), when(True)], "A", "A"),
+        ([when(False), when(False), when(False)], "A", None, "No conditions matched"),
+        ([when(True), when(False), when(False)], "A", None, "No conditions matched"),
+        ([when(True), when(True), when(False)], "A", None, "No conditions matched"),
+        ([when(True), when(True), when(True)], "A", "A", None),
     ],
 )
-def test_all_operator(conditions, action, result):
+def test_all_operator(conditions, action, value, message):
     obj = None
 
-    assert RulesEngine(Rule(all_(*conditions), then(action))).run(obj) is result
+    result = RulesEngine(Rule(all_(*conditions), then(action))).run(obj)
+    assert result.value == value
+    assert result.message == message
