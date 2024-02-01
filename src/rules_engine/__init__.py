@@ -31,14 +31,14 @@ class RulesEngine:
 
     def run(self, *args: Any, **kwargs: Any) -> Any:
         for rule in self.rules:
-            if rule.condition(*args, **kwargs, message=rule.message):
+            if rule.condition(*args, **kwargs):
                 return rule.action(*args, **kwargs, message=rule.message)
 
     def run_all(self, *args: Any, **kwargs: Any) -> list:
         return [
             rule.action(*args, **kwargs, message=rule.message)
             for rule in self.rules
-            if rule.condition(*args, **kwargs, message=rule.message)
+            if rule.condition(*args, **kwargs)
         ]
 
 

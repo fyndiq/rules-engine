@@ -7,16 +7,20 @@ from src.rules_engine import Otherwise, Rule, RulesEngine, not_, then
 Article = namedtuple("Article", "title price image_url stock")
 
 
-def article_stock_missing(article, message):
+def article_stock_missing(article):
     return not article.stock
 
 
-def article_price_missing(article, message):
+def article_price_missing(article):
     return not article.price
 
 
-def article_image_missing(article, message):
+def article_image_missing(article):
     return not article.image_url
+
+
+def return_false_and_message(article, message):
+    return False, message
 
 
 @pytest.mark.parametrize(
@@ -26,7 +30,7 @@ def article_image_missing(article, message):
             Article(
                 title="Iphone Case", price=1000, image_url="http://localhost/image", stock=None
             ),
-            False,
+            (False, "article stock missing"),
         ),
         (
             Article(title="Iphone Case", price=None, image_url="http://image", stock=10),
@@ -44,7 +48,7 @@ def article_image_missing(article, message):
 )
 def test_article_complete_rules(article, result):
     assert result == RulesEngine(
-        Rule(article_stock_missing, then(False)),
+        Rule(article_stock_missing, return_false_and_message, message="article stock missing"),
         Rule(article_price_missing, then(False)),
         Rule(article_image_missing, then(False)),
         Otherwise(then(True)),
