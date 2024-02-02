@@ -26,9 +26,9 @@ from rules_engine import Rule, RulesEngine, when, then
 
 name = "fyndiq"
 
-RulesEngine(Rule(when(name == "fyndiq"),then(True))).run(name)
+RulesEngine(Rule(when(name == "fyndiq"),then(True), 'it is fyndiq')).run(name)
 
->>> True
+>>> Result(value=True, message='it is fyndiq')
 ```
 
 ## When
@@ -42,12 +42,12 @@ let's check if a value is `None` and raise an exception.
 from rules_engine import Rule, RulesEngine, when
 obj = None
 
-def cannot_be_none_error():
+def no_a_string(obj):
     return "not a string error"
 
 RulesEngine(Rule(when(obj is None), cannot_be_none_error)).run(obj)
 
->>> 'not a string error'
+>>> Result(value='not a string error', message=None)
 ```
 
 ## Then
@@ -61,7 +61,7 @@ obj = None
 
 RulesEngine(Rule(when(obj is None), then('not a string error'))).run(obj)
 
->>> 'not a string error'
+>>> Result(value='not a string error', message=None)
 ```
 
 ## Not
@@ -80,9 +80,9 @@ def is_missing(obj):
 
 obj="Hello"
 
-RulesEngine(Rule(not_(is_missing), then(True))).run(obj)
+RulesEngine(Rule(not_(is_missing), then(True)), 'object is missing').run(obj)
 
->>> True
+>>> Result(value=True, message='object is missing')
 ```
 
 ## All
@@ -107,7 +107,7 @@ obj = [1,2]
 
 RulesEngine(Rule(all_(not_(is_missing), is_a_list), then(True))).run(obj)
 
->>> True
+>>> Result(value=True, message=None)
 ```
 
 ## Any
@@ -130,9 +130,9 @@ def is_a_list(obj):
 
 obj = "Hello"
 
-RulesEngine(Rule(any_(is_a_str, is_a_list), then(True))).run(obj)
+RulesEngine(Rule(any_(is_a_str, is_a_list), then(True), "it is a string or a list")).run(obj)
 
->>> True
+>>> Result(value=True, message="it is a string or a list")
 ```
 
 ## Run/RunAll
@@ -160,7 +160,7 @@ RulesEngine(
       Rule(is_string, then("string")),
       ).run(value)
 
->>> "integer"
+>>> Result(value='integer', message=None)
 ```
 
 Since the first rule satisfies the conditions the rules engine will go no further
@@ -191,7 +191,7 @@ RulesEngine(
       Rule(is_gr_3_chars, then("greater than 3 charcters")),
       ).run_all(value)
 
->>> ["string", "greater than 3 charcters"]
+>>>[Result(value='string', message=None),Result(value='greater than 3 charcters', message=None)]
 
 ```
 
