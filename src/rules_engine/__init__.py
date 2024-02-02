@@ -1,22 +1,39 @@
-from typing import Any, Callable, TypeVar
+from typing import Any, Callable, TypeVar, Optional
+from dataclasses import dataclass
 
 T = TypeVar('T')
 
 
+class NoMatch(Exception):
+    message = "No conditions matched"
+
+
+@dataclass
+class Result:
+    value: Any
+    message: Optional[str]
+
+
 class Rule:
-    def __init__(self, condition: Callable[..., bool], action: Callable[..., Any]) -> None:
+    def __init__(
+        self,
+        condition: Callable[..., bool],
+        action: Callable[..., Any],
+        message: Optional[str] = None,
+    ) -> None:
         self.condition = condition
         self.action = action
+        self.message = message
 
 
 class Otherwise(Rule):
-    def __init__(self, action):
-        super().__init__(when(True), action)
+    def __init__(self, action, message=None) -> None:
+        super().__init__(when(True), action, message)
 
 
 class NoAction(Rule):
-    def __init__(self, condition):
-        super().__init__(condition, then(None))
+    def __init__(self, condition, message=None):
+        super().__init__(condition, then(None), message)
 
 
 class RulesEngine:
@@ -26,12 +43,20 @@ class RulesEngine:
     def run(self, *args: Any, **kwargs: Any) -> Any:
         for rule in self.rules:
             if rule.condition(*args, **kwargs):
-                return rule.action(*args, **kwargs)
+                return Result(rule.action(*args, **kwargs), rule.message)
+
+        raise NoMatch
 
     def run_all(self, *args: Any, **kwargs: Any) -> list:
-        return [
-            rule.action(*args, **kwargs) for rule in self.rules if rule.condition(*args, **kwargs)
+        results = [
+            Result(rule.action(*args, **kwargs), rule.message)
+            for rule in self.rules
+            if rule.condition(*args, **kwargs)
         ]
+
+        if not results:
+            raise NoMatch
+        return results
 
 
 def when(state: bool) -> Callable[..., bool]:
