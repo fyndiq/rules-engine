@@ -23,7 +23,7 @@ RulesEngine(
       Rule(is_string, then("string")),
       ).run(value)
 
->>> "integer"
+>>> Result(value='integer', message=None)
 ```
 
 Since the first rule satisfies the conditions the rules engine will go no further
@@ -46,7 +46,6 @@ def is_gr_3_chars(value):
    return len(value) > 3
 
 
-
 value="Hello"
 RulesEngine(
       Rule(is_integer, then("integer")),
@@ -54,6 +53,6 @@ RulesEngine(
       Rule(is_gr_3_chars, then("greater than 3 charcters")),
       ).run_all(value)
 
->>> ["string", "greater than 3 charcters"]
+>>>[Result(value='string', message=None),Result(value='greater than 3 charcters', message=None)]
 
 ```

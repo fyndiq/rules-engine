@@ -20,5 +20,5 @@ obj = [1,2]
 
 RulesEngine(Rule(all_(not_(is_missing), is_a_list), then(True))).run(obj)
 
->>> True
+>>> Result(value=True, message=None)
 ```

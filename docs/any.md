@@ -18,7 +18,7 @@ def is_a_list(obj):
 
 obj = "Hello"
 
-RulesEngine(Rule(any_(is_a_str, is_a_list), then(True))).run(obj)
+RulesEngine(Rule(any_(is_a_str, is_a_list), then(True), "it is a string or a list")).run(obj)
 
->>> True
+>>> Result(value=True, message="it is a string or a list")
 ```

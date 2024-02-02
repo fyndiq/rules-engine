@@ -14,7 +14,7 @@ def is_missing(obj):
 
 obj="Hello"
 
-RulesEngine(Rule(not_(is_missing), then(True))).run(obj)
+RulesEngine(Rule(not_(is_missing), then(True)), 'object is missing').run(obj)
 
->>> True
+>>> Result(value=True, message='object is missing')
 ```

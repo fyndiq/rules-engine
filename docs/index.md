@@ -29,6 +29,6 @@ name = "fyndiq"
 
 RulesEngine(Rule(when(name == "fyndiq"),then(True))).run(name)
 
->> True
+>>> Result(value=True, message='it is fyndiq')
 
 ```
