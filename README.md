@@ -18,6 +18,8 @@ Full Documentation can be found [here](https://fyndiq.github.io/rules-engine/)
 ## How to install
 
     pip install rules-engine
+or
+    poetry add rules-engine
 
 ## How to use
 

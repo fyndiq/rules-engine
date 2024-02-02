@@ -7,3 +7,7 @@
 ## Using Pip
 
     pip install rules-engine
+
+or
+
+    poetry add rules-engine

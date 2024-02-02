@@ -19,6 +19,9 @@ Full source code on [github](https://github.com/fyndiq/rules-engine).
 ## How to install
 
     pip install rules-engine
+or
+
+    poetry add rules-engine
 
 ## How to use
 
@@ -27,7 +30,7 @@ from rules_engine import Rule, RulesEngine, when, then
 
 name = "fyndiq"
 
-RulesEngine(Rule(when(name == "fyndiq"),then(True))).run(name)
+RulesEngine(Rule(when(name == "fyndiq"),then(True), 'it is fyndiq')).run(name)
 
 >>> Result(value=True, message='it is fyndiq')
 
