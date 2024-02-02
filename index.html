@@ -467,14 +467,17 @@
 <h2 id="how-to-install">How to install</h2>
 <div class="highlight"><pre><span></span><code>pip install rules-engine
 </code></pre></div>
+<p>or</p>
+<div class="highlight"><pre><span></span><code>poetry add rules-engine
+</code></pre></div>
 <h2 id="how-to-use">How to use</h2>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">rules_engine</span> <span class="kn">import</span> <span class="n">Rule</span><span class="p">,</span> <span class="n">RulesEngine</span><span class="p">,</span> <span class="n">when</span><span class="p">,</span> <span class="n">then</span>
 
 <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fyndiq&quot;</span>
 
-<span class="n">RulesEngine</span><span class="p">(</span><span class="n">Rule</span><span class="p">(</span><span class="n">when</span><span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;fyndiq&quot;</span><span class="p">),</span><span class="n">then</span><span class="p">(</span><span class="kc">True</span><span class="p">)))</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="n">RulesEngine</span><span class="p">(</span><span class="n">Rule</span><span class="p">(</span><span class="n">when</span><span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;fyndiq&quot;</span><span class="p">),</span><span class="n">then</span><span class="p">(</span><span class="kc">True</span><span class="p">),</span> <span class="s1">&#39;it is fyndiq&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 
-<span class="o">&gt;&gt;</span> <span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Result</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s1">&#39;it is fyndiq&#39;</span><span class="p">)</span>
 </code></pre></div>
 
               
