@@ -7,7 +7,10 @@ from src.rules_engine import Result
     "value, message, expected_result",
     [
         (True, "Success", True),
+        ("aaa", "Success", True),
+        (2, "Success", True),
         (False, None, False),
+        (None, None, False),
         (False, "Failure", False),
     ],
 )
