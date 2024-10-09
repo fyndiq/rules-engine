@@ -13,6 +13,8 @@ class Result:
     value: Any
     message: Optional[str]
 
+    def __bool__(self):
+        return bool(self.value)
 
 class Rule:
     def __init__(
