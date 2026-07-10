@@ -40,7 +40,7 @@ class RulesEngine:
     def __init__(self, *rules: Rule) -> None:
         self.rules = rules
 
-    def run(self, *args: Any, **kwargs: Any) -> Any:
+    def run(self, *args: Any, **kwargs: Any) -> Result:
         for rule in self.rules:
             if rule.condition(*args, **kwargs):
                 return Result(rule.action(*args, **kwargs), rule.message)
