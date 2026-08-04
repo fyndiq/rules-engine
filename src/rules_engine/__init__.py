@@ -1,5 +1,5 @@
-from typing import Any, Callable, TypeVar, Optional
 from dataclasses import dataclass
+from typing import Any, Callable, Optional, TypeVar
 
 T = TypeVar('T')
 
