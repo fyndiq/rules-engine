@@ -1,4 +1,4 @@
-from typing import Any, Callable, TypeVar, Optional
+from typing import Any, Callable, TypeVar, Optional, List
 from dataclasses import dataclass
 
 T = TypeVar('T')
@@ -47,7 +47,7 @@ class RulesEngine:
 
         raise NoMatch
 
-    def run_all(self, *args: Any, **kwargs: Any) -> list:
+    def run_all(self, *args: Any, **kwargs: Any) -> List[Result]:
         results = [
             Result(rule.action(*args, **kwargs), rule.message)
             for rule in self.rules
