@@ -27,12 +27,12 @@ class Rule:
 
 
 class Otherwise(Rule):
-    def __init__(self, action, message=None) -> None:
+    def __init__(self, action: Callable[..., Any], message: Optional[str] = None) -> None:
         super().__init__(when(True), action, message)
 
 
 class NoAction(Rule):
-    def __init__(self, condition, message=None):
+    def __init__(self, condition: Callable[..., bool], message: Optional[str] = None) -> None:
         super().__init__(condition, then(None), message)
 
 
