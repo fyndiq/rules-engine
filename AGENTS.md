@@ -9,18 +9,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-make setup        # create .venv and install requirements.txt
-make test         # run pytest inside .venv
-make build        # python -m build (sdist + wheel)
-make publish      # twine upload dist/*
-make serve-docs   # mkdocs serve (local docs preview)
-make deploy-docs  # mkdocs gh-deploy
+just setup        # create .venv and install requirements.txt
+just test         # run pytest inside .venv
+just build        # python -m build (sdist + wheel)
+just publish      # twine upload dist/*
+just serve-docs   # mkdocs serve (local docs preview)
+just deploy-docs  # mkdocs gh-deploy
 
 # Run a single test (activate .venv first, or use .venv/bin/pytest)
 pytest tests/test_operators.py::test_any_operator
 ```
 
-CI (`.github/workflows/ci.yaml`) only runs `make setup` + `make test` on push.
+CI (`.github/workflows/ci.yaml`) runs the `setup` and `test` recipes' underlying commands directly (no `make`/`just` inside CI) on push.
 
 ## Architecture
 

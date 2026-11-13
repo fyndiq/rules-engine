@@ -7,5 +7,11 @@ jobs:
       - uses: actions/checkout@master
         with:
           fetch-depth: 1
-      - run: make setup
-      - run: make test
+      - run: |
+          python -m venv .venv
+          source .venv/bin/activate
+          pip3 install -U pip
+          pip3 install -r requirements.txt
+      - run: |
+          source .venv/bin/activate
+          pytest
